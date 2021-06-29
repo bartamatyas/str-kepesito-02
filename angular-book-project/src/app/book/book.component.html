@@ -1,3 +1,33 @@
-<section>
-
-</section>
+<section class="container-md">
+    <form #mForm="ngForm">
+      <div class="form-group" (ngSubmit)="saveBook(book)">
+        <label class="text-inverse" for="id">Title:</label>
+        <input id="title" type="text" class="form-control" required pattern="{5,25}$" name="title"
+          [(ngModel)]="book.title">
+      </div>
+      <div class="row">
+        <div class="form-group col-6">
+          <label class="text-inverse" for="id">Author:</label>
+          <input id="author" type="text" class="form-control" required pattern="^[a-űA-Ű] {5,30}$"
+            name="author" [(ngModel)]="book.author">
+        </div>
+        <div class="form-group col-6">
+          <label class="text-inverse" for="category">Category:</label>
+          <select id="category" type="text" class="form-control" required pattern="" name="category"
+            [(ngModel)]="book.category">
+            <option selected disabled>Choose Category
+            </option>
+            <option value="Adventure">Adventure</option>
+            <option value="Crime">Crime</option>
+            <option value="Romance">Romance</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" [disabled]="mForm.invalid" class="btn btn-success">Save New Book</button>
+      <div [hidden]="mForm.valid" class="text-danger">
+        <small>Fill all field to save!</small>
+      </div>
+    </form>
+  
+  
+  </section>

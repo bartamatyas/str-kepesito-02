@@ -9,7 +9,8 @@ const bookList = [
 ];
 
 function bookFilter(bookList, year, isHardCopy) {
-
+    return bookList.filter( item => item.year > year && item.details.hardcopy == isHardCopy)
+    .map( mapItem => mapItem.title);
 }
 
 export { bookFilter };

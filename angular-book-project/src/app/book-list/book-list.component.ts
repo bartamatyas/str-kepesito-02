@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Book } from '../model/book';
+import { HttpService } from '../service/http.service';
 
 @Component({
   selector: 'app-book-list',
@@ -7,14 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookListComponent implements OnInit {
 
-  bookList =[];
+  bookList: Observable<Book[]> = new Observable<Book[]>();
 
-  constructor() { }
+
+  constructor(
+    private httpService: HttpService
+  ) { }
 
   ngOnInit(): void {
   }
 
-  getBookList(){}
+  getBookList(): void {
+    this.bookList = this.httpService.getBookList();
+  }
 
   readBook(bookObj){}
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Book } from '../model/book';
 
 @Component({
   selector: 'app-book',
@@ -8,13 +9,16 @@ import { FormGroup } from '@angular/forms';
 })
 export class BookComponent implements OnInit {
 
-  bookForm: FormGroup;
+  @ViewChild('mForm', { static: true }) bookForm: FormGroup;
+  movie: Book = new Book();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  saveBook():any{}
+  saveBook(book: Book): any {
+    console.log(book)
+  }
 
 }
