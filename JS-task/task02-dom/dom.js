@@ -26,12 +26,3 @@ function configStyle() {
     }
     
 export { listMyBooks, configStyle };
-
-
-return list.sort((a, b) => {
-    if (typeof a[key] === 'number' && typeof b[key] === 'number') {
-        return a[key] - b[key];
-    } else {
-        return String(a[key]).toLowerCase().localeCompare(String(b[key]).toLowerCase());
-    }
-});
