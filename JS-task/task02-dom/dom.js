@@ -9,20 +9,21 @@ const bookList = [
 ]
 
 function listMyBooks(bookList) {
-    
-}
+    const sectionElements = document.querySelectorAll('#container');
+for (let i = 0; i < sectionElements.length; i++) {
+    sectionElements[i].setAttribute('Ezt a könyvet már olvastad: ', sectionElements[i].innerHTML);
+   }
 
 function configStyle() {
     const elements = document.querySelector('section').forEach( element => {
-        element.style.border = '3px red';
+        element.style.border = '3px red',
 
-    const elements = document.querySelector('div').forEach( element => {
-        element.style.display = 'flex';
+     elements = document.querySelector('div').forEach( element => {
+        element.style.display = 'flex',
 
-    const elements = document.querySelector('p').forEach( element => {
+     elements = document.querySelector('p').forEach( element => {
         element.style.color = 'red';
-        element.style.align = 'center';
+        element.style.align = 'center';}
 
-    }
     
 export { listMyBooks, configStyle };
